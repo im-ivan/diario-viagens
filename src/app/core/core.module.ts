@@ -4,11 +4,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaterialModule } from '../shared/material.module';
 import { RouterModule } from '@angular/router';
 import { TermosDeUsoComponent } from './components/termos-de-uso/termos-de-uso.component';
+import { DialogAniverComponent } from './components/dialog-aniver/dialog-aniver.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    TermosDeUsoComponent
+    TermosDeUsoComponent,
+    DialogAniverComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,7 @@ import { TermosDeUsoComponent } from './components/termos-de-uso/termos-de-uso.c
     RouterModule, 
   ],
   exports: [ 
-    NavbarComponent
+    NavbarComponent, DialogAniverComponent
   ],
 })
 export class CoreModule {}

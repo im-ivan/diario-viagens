@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable, timeout } from 'rxjs';
 import { AuthService } from '../../services/auth/auth.service';
+import { DialogAniverComponent } from '../dialog-aniver/dialog-aniver.component';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +11,13 @@ import { AuthService } from '../../services/auth/auth.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+
+  usuarioLogado: any;
+  public hoje = moment().format('DD-MM');
+
+  constructor(
+    private authService: AuthService,
+    private dialog: MatDialog) {}
 
   logged$?: Observable<any>;
   logged: any;
@@ -35,6 +44,41 @@ export class NavbarComponent implements OnInit {
     (value =>{
       this.logged = value;
     })
+
+    setTimeout(() => {
+      this.getUsuarioLogado();
+    }, 4000);
   }
 
+  openDialog(dados: any) {
+    const ref = this.dialog.open(DialogAniverComponent, {
+      minWidth: '400px',
+      data: dados
+    })
+  }
+
+  openModalNiver(user: any) {
+    var exibirModal = localStorage.getItem("exibir_modal");
+    if (exibirModal == null) {
+      localStorage.setItem("exibir_modal", "s");
+      exibirModal = 's';
+    }
+    if ((user.dataNasc == this.hoje) && exibirModal === 's') {
+      this.openDialog(user)
+      exibirModal = 'n';
+      localStorage.setItem("exibir_modal", "n");
+
+    } else {
+    }
+  }
+
+  getUsuarioLogado(){
+    this.authService.getUsuario().subscribe(val =>{
+      this.usuarioLogado = val;
+      console.log(this.usuarioLogado);
+      this.usuarioLogado.dataNasc = moment(this.usuarioLogado.dataNasc.toDate()).format("DD-MM");    
+      this.openModalNiver(this.usuarioLogado);
+
+    })
+  }
 }
