@@ -18,6 +18,7 @@ export class CadastroComponent implements OnInit {
     {
       nome: ['', [Validators.required]],
       nick: ['', [Validators.required]],
+      dataNasc: [new Date(), [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(8)]],
       confirma_senha: [''],
@@ -38,9 +39,9 @@ export class CadastroComponent implements OnInit {
   ) {}
 
   onSubmit() {
-    const { email, senha, nick, nome } = this.signupForm.value;
+    const { email, senha, nick, nome, dataNasc } = this.signupForm.value;
     this.authService
-      .signupEmail(email, senha, nome, nick)
+      .signupEmail(email, senha, nome, nick, dataNasc)
       .pipe(
         this.toast.observe({
           success: 'Usuário criado com sucesso',

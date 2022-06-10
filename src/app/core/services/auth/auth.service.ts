@@ -38,10 +38,14 @@ export class AuthService {
     );
   }
 
+  getUsuario(): Observable<any> {
+    return this.userData.pipe(
+      first(),
+    );
+  }
+
   get userData() {
-    
     const userDoc = doc(this.usuarios, this.uid);
-    
     return docData(userDoc).pipe(first());
   }
 
@@ -58,7 +62,7 @@ export class AuthService {
 
   usuarios = collection(this.db, 'usuarios'); 
 
-  signupEmail(email: string, password: string, nome: string, nick: string) {
+  signupEmail(email: string, password: string, nome: string, nick: string, dataNasc: Date) {
     
     return from(
       createUserWithEmailAndPassword(this.auth, email, password)
@@ -72,6 +76,7 @@ export class AuthService {
           email: email,
           nome: nome,
           nick: nick,
+          dataNasc: dataNasc
         });
 
         this.emailVerificacao(creds.user);
@@ -89,7 +94,6 @@ export class AuthService {
   }
 
   logout(rota: '/login' | '/confirmar-email') {
-   
     return from(this.auth.signOut()).pipe(
       tap(() => {
         this.router.navigate([rota]); 
@@ -142,7 +146,6 @@ export class AuthService {
   }
 
   recoverPassword(email: string) {
-    
     return from(sendPasswordResetEmail(this.auth, email));
   }
 }
