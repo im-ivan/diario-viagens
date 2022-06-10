@@ -12,15 +12,21 @@ export class LoginComponent implements OnInit {
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     senha: ['', [Validators.required, Validators.minLength(8)]],
+    recaptcha: ['', Validators.required],
   });
 
   ocultar = true;
+  siteKey:string;
+  
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private toast: HotToastService
-  ) {}
+  ) {
+    this.siteKey = "6LcWDVQgAAAAAHAuEbe4_6TGThVh4gH8ZinIZ5sj";
+
+  }
 
   onSubmit() {
     const { email, senha } = this.loginForm.value;
@@ -61,7 +67,6 @@ export class LoginComponent implements OnInit {
       )
       .subscribe();
   }
-
 
   ngOnInit(): void {}
 }

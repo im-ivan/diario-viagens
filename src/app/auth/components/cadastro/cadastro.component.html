@@ -53,17 +53,17 @@
           type="password" />
         <mat-icon matPrefix>key</mat-icon>
       </mat-step>
-      <mat-step label="Cadastrar ou Entrar com o Google" completed="true">
+      <mat-step label="Preencha o captcha para prosseguir com o cadastro" completed="true">
+        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha" required>
+        </ngx-recaptcha2> 
+      </mat-step>
+      <mat-step label="Cadastrar" completed="true">
         <span class="mat-error"
           *ngIf="signupForm.errors?.['matchPasswords'] && signupForm.get('confirma_senha')?.touched">
           As senhas não correspondem
         </span>
         <button mat-raised-button color="primary" [disabled]="signupForm.invalid">
           Cadastrar
-        </button>
-        <span> ou </span>
-        <button (click)="onLoginGoogle()" type="button" mat-raised-button color="warn">
-          Entrar com o Google
         </button>
       </mat-step>
     </mat-stepper>
