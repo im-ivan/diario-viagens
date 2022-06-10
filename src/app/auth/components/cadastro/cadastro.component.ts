@@ -22,9 +22,12 @@ export class CadastroComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(8)]],
       confirma_senha: [''],
+      recaptcha: ['', Validators.required],
     },
     { validators: [this.matchPasswords] }
   );
+
+  siteKey:string;
 
   matchPasswords(control: AbstractControl): ValidationErrors | null {
     return control.get('senha')!.value !== control.get('confirma_senha')!.value
@@ -36,7 +39,9 @@ export class CadastroComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private toast: HotToastService
-  ) {}
+  ) {
+    this.siteKey = "6LcWDVQgAAAAAHAuEbe4_6TGThVh4gH8ZinIZ5sj";
+  }
 
   onSubmit() {
     const { email, senha, nick, nome, dataNasc } = this.signupForm.value;
@@ -48,32 +53,6 @@ export class CadastroComponent implements OnInit {
           error: 'Um erro ocorreu',
           loading: 'Criando usuário...',
         })
-      )
-      .subscribe();
-  }
-
-  onLoginGoogle() {
-    this.authService
-      .loginGoogle()
-      .pipe(
-        this.toast.observe({
-          success: 'Login efetuado',
-          error: 'Operação cancelada',
-          loading: 'Fazendo login...',
-        })
-      )
-      .subscribe();
-  }
-  
-  onLoginGithub() {
-    this.authService
-      .loginGithub()
-      .pipe(
-        this.toast.observe({
-          success: 'Login efetuado',
-          error: 'Operação cancelada',
-          loading: 'Fazendo login...',
-        })      
       )
       .subscribe();
   }

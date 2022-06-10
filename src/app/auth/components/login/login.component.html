@@ -21,6 +21,8 @@
                 <mat-icon>{{ocultar ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         </mat-form-field>
+        <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha" required>
+        </ngx-recaptcha2>
         <a routerLink="/recuperar-senha">Esqueci minha senha</a>
         <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
         <span>ou</span>
@@ -28,7 +30,7 @@
             Entrar com o Google
         </button>
         <p></p>
-        <button (click)="onLoginGithub()" type="button" class="btn btn-dark">
+        <button (click)="onLoginGithub()"  type="button" class="btn btn-dark">
             Entrar com o Github
         </button>
     </form>
