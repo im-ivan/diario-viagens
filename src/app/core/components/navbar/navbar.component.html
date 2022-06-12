@@ -1,5 +1,6 @@
 <mat-toolbar color="primary" id="toolbar"> 
-  <span>Diários</span>
+  <a href="/home"><span>Diários</span></a>
+  
   <span class="spacer"></span>
   <div class="my-auto" *ngIf="logged$ | async; else unlogged" class="link-area">
     <button mat-icon-button (click)="muda()">
