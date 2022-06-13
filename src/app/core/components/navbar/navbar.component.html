@@ -1,23 +1,31 @@
-<mat-toolbar color="primary" id="toolbar"> 
-  <a href="/home"><span>Diários</span></a>
-  
-  <span class="spacer"></span>
-  <div class="my-auto" *ngIf="logged$ | async; else unlogged" class="link-area">
-    <button mat-icon-button (click)="muda()">
-      <mat-icon>invert_colors</mat-icon>
-    </button>
-    <button mat-icon-button>
-      <mat-icon matPrefix>person</mat-icon>
-    </button>
-    <span class="logged">{{logged.email}} </span>
-    <button mat-icon-button (click)="logout()">
-      <mat-icon>logout</mat-icon>
-    </button>
-  </div>
-  <ng-template #unlogged>
-    <div class="link-area">
-      <a mat-button routerLink="/login">Login</a>
-      <a mat-button routerLink="/cadastro">Cadastro</a>
+<mat-toolbar color="primary" id="toolbar">
+  <div class="navbar-content d-flex justify-content-between mx-auto">
+    <div class="brand">
+      <a class="mat-button-wrapper">
+        <img src="../../../../assets/img/logotype-diario-de-bordo.svg" width="250px" alt="">
+      </a>  
     </div>
-  </ng-template>
+   
+    <div class="nav-items">
+      <div class="my-auto" *ngIf="logged$ | async; else unlogged" class="link-area">
+        <button mat-icon-button (click)="muda()">
+          <mat-icon>invert_colors</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon matPrefix>person</mat-icon>
+        </button>
+        <span class="logged">{{logged.email}} </span>
+        <button mat-icon-button (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+      <ng-template #unlogged>
+        <div class="link-area">
+          <a mat-button routerLink="/login">Login</a>
+          <a mat-button routerLink="/cadastro">Cadastro</a>
+        </div>
+      </ng-template>
+    </div>
+    
+  </div>
 </mat-toolbar>

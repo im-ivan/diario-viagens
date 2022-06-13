@@ -14,9 +14,15 @@
   width: 300px;
   min-width: 300px;
 }
+mat-card:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .example-card mat-card-header{
   height: 80px;
 }
 .example-card mat-card-content{
   height: 100px;
+}
+mat-grid-list{
+  max-width: 1550px;
 }

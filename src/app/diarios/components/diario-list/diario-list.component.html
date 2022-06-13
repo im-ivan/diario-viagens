@@ -2,7 +2,7 @@
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Todos">
       <div *ngIf="allDiarios$ | async as diarios; else loading" class="my-5">
-        <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)">
+        <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)" class="mx-auto">
           <mat-grid-tile *ngFor="let diario of diarios">
             <mat-card class="example-card">
               <mat-card-header>
@@ -28,7 +28,7 @@
     </mat-tab>
     <mat-tab label="Meus diários">
       <div *ngIf="meusDiarios$ | async as diarios; else loading" class="my-5">
-        <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)">
+        <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)" class="mx-auto">
           <mat-grid-tile *ngFor="let diario of diarios">
             <mat-card class="example-card">
               <mat-card-header>
