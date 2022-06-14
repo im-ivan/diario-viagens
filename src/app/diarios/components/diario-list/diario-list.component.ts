@@ -16,22 +16,21 @@ import { DiarioEditComponent } from '../diario-edit/diario-edit.component';
 export class DiarioListComponent implements OnInit {
   allDiarios$?: Observable<Diario[]>;
   meusDiarios$?: Observable<Diario[]>;
-
   numeroDeColunas!: number;
+  usuarioLogado?: any;
 
   constructor(
     private dialog: MatDialog,
     private diariosService: DiariosService,
     private toast: HotToastService
-  ) {} 
+  ) { }
 
   onClickAdd() {
-    
+
     const ref = this.dialog.open(DiarioAddComponent, { maxWidth: '512px' });
-    
+
     ref.afterClosed().subscribe({
       next: (result) => {
-        
         if (result) {
           this.diariosService
             .addDiario(result.diario, result.imagem)
@@ -49,7 +48,7 @@ export class DiarioListComponent implements OnInit {
   }
 
   onClickEdit(diario: Diario) {
-    
+
     const ref = this.dialog.open(DiarioEditComponent, {
       maxWidth: '512px',
       data: { ...diario },
@@ -57,8 +56,7 @@ export class DiarioListComponent implements OnInit {
     ref.afterClosed().subscribe({
       next: (result) => {
         if (result) {
-          this.diariosService
-            .editDiario(result.diario, result.imagem)
+          this.diariosService.edithDiario(result.diario, result.imagem)
             .pipe(
               this.toast.observe({
                 loading: 'Atualizando...',
@@ -96,7 +94,7 @@ export class DiarioListComponent implements OnInit {
 
   onResize(event: any) {
     this.numeroDeColunas = (event.target.innerWidth <= 900) ? 1 : 3;
-    }
+  }
 
   ngOnInit(): void {
     this.allDiarios$ = this.diariosService.getTodosDiarios();

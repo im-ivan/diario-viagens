@@ -31,3 +31,11 @@ mat-grid-list{
 .tab-group-container{
   min-height: 100vh;
 }
+
+.picsum-img-wrapper {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+  align-items: center;
+  display: inline-block;
+}
