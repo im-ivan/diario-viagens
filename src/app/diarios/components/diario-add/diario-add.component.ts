@@ -14,7 +14,7 @@ export class DiarioAddComponent implements OnInit {
   imagens: File[] = [];
   nameSelected = "";
   listaLinks: any[] = [];
-
+  corBtnImg = this.imagens.length > 0 ?'primary': 'warn';
   
   setImage(event: any) {
 
@@ -30,6 +30,7 @@ export class DiarioAddComponent implements OnInit {
       fileNames.push(selectedFiles[i].name);
       console.log(selectedFiles[i])
       this.imagens.push(selectedFiles[i]);
+      this.corBtnImg = this.imagens.length > 0 ?'primary': 'warn';
 
       console.log(fileNames);
     }

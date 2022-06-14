@@ -14,6 +14,7 @@ export class DiarioEditComponent implements OnInit {
   imagens: File[] =[];
   nameSelected = "";
   listaLinks: any[] = [];
+  corBtnImg = this.imagens.length > 0 ?'primary': 'warn';
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: Diario, // objeto enviado no open {data: diario}
@@ -38,6 +39,7 @@ export class DiarioEditComponent implements OnInit {
       fileNames.push(selectedFiles[i].name);      
       console.log(selectedFiles[i])
       this.imagens.push(selectedFiles[i]);
+      this.corBtnImg = this.imagens.length > 0 ?'primary': 'warn';
          
       console.log(this.imagens);
     }
