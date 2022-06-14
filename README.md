@@ -1,27 +1,28 @@
-# DiariosApp
+# Diário de Bordo
 
+Projeto fork do repositório https://github.com/jose-almir/diario-viagens para fins didáticos da disciplina de Angular e Firebase, do curso de Java Full Stack da SoulCode Academy. O projeto se trata de uma rede social para pessoas que gostariam de compartilhar experiências com viagens. Foram implementados neste projeto:
+
+* Criação de identidade visual com aplicação em todas as páginas da aplicação;
+* Mensagem parabenizando aniversariantes;
+* Vizualização da lista de diários em grids;
+* Criação de uma landing page;
+* Botão para obfuscação de senha em formulários de senha;
+* Captcha para login;
+* Login com Github;
+* Mudança de cor da toolbar;
+* Criação de página de política de uso;
+* Adição de rodapé;
+* Email de usuário logado no topo da página;
+* Adição de stepper na página de cadastro.
+
+Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
-## Development server
+## Para execução do projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+~~~
+git clone https://github.com/im-ivan/diario-viagens
+cd diario-viagens
+npm install
+ng serve -o
+~~~
