@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="783.4707mm"
+   height="158.65285mm"
+   viewBox="0 0 783.4707 158.65285"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="logotype-diario-de-bordo-verse.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.25968364"
+     inkscape:cx="1786.7895"
+     inkscape:cy="-115.52518"
+     inkscape:window-width="1240"
+     inkscape:window-height="1022"
+     inkscape:window-x="1286"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Camada 2"
+     transform="translate(-39.834733,-9.7354667)" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-39.834733,-9.7354667)">
+    <path
+       id="path846"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.224902"
+       d="M 119.16116,9.7354667 A 79.326461,79.326461 0 0 0 39.834733,89.061891 79.326461,79.326461 0 0 0 119.16116,168.38831 79.326461,79.326461 0 0 0 198.48758,89.061891 79.326461,79.326461 0 0 0 119.16116,9.7354667 Z m 0.001,5.8322023 c 40.57365,0 73.49215,32.920572 73.49215,73.494222 0,40.573649 -32.9185,73.492159 -73.49215,73.492159 -20.01853,0 -38.170631,-8.01708 -51.428389,-21.00957 l -3.482991,2.42724 2.427243,-3.48299 C 53.685224,127.2315 45.667968,109.08026 45.667968,89.061891 c 0,-40.57365 32.920572,-73.494222 73.494222,-73.494222 z m 0,2.605527 c -39.165811,0 -70.888699,31.722885 -70.888699,70.888695 0,19.147139 7.584405,36.512099 19.91093,49.264689 l 40.598559,-58.261557 5.23223,5.232241 a 6.2121396,6.7209161 0 0 0 -1.0666,3.764627 6.2121396,6.7209161 0 0 0 6.21254,6.72052 6.2121396,6.7209161 0 0 0 3.87315,-1.466059 l 5.1232,5.123201 -58.261556,40.598557 c 12.752689,12.32712 30.118576,19.91248 49.266246,19.91248 39.16581,0 70.88662,-31.72289 70.88662,-70.888699 0,-39.16581 -31.72081,-70.888695 -70.88662,-70.888695 z" />
+    <path
+       id="path2051"
+       style="fill:#9ccc65;fill-opacity:1;stroke:none;stroke-width:0.604851;stroke-opacity:1"
+       inkscape:transform-center-x="-2.8110976e-06"
+       inkscape:transform-center-y="-24.255438"
+       d="m 174.07098,34.151547 -63.90669,44.532166 5.1232,5.123201 h 5.3e-4 a 6.2121396,6.7209161 0 0 1 3.87315,-1.466059 6.2121396,6.7209161 0 0 1 6.21202,6.721036 6.2121396,6.7209161 0 0 1 -1.0666,3.76411 l 5.23224,5.232239 z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:66.58px;line-height:1.25;font-family:sans-serif;fill:#9ccc65;fill-opacity:1;stroke:none;stroke-width:1.6645"
+       x="215.8965"
+       y="116.53147"
+       id="text7836"><tspan
+         sodipodi:role="line"
+         id="tspan7834"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Space Mono';-inkscape-font-specification:'Space Mono';fill:#9ccc65;fill-opacity:1;stroke-width:1.6645"
+         x="215.8965"
+         y="116.53147">D<tspan
+   style="fill:#ffffff"
+   id="tspan24654">iário de</tspan> B<tspan
+   style="fill:#ffffff"
+   id="tspan26630">ordo</tspan></tspan></text>
+  </g>
+</svg>
