@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       .loginEmail(email, senha)
       .pipe(
         this.toast.observe({
-          success: 'Login efetuado',
+          success: 'Seja bem vindo!',
           error: 'Um erro ocorreu',
           loading: 'Fazendo login...',
         })
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       .loginGoogle()
       .pipe(
         this.toast.observe({
-          success: 'Login efetuado',
+          success: 'Seja bem vindo!',
           error: 'Operação cancelada',
           loading: 'Fazendo login...',
         })
@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
       .loginGithub()
       .pipe(
         this.toast.observe({
-          success: 'Login efetuado',
+          success: 'Seja bem vindo!',
           error: 'Operação cancelada',
           loading: 'Fazendo login...',
         })
