@@ -23,7 +23,7 @@
         <mat-form-field appearance="fill">
           <mat-step label="Preencha com sua data de nascimento" completed="true">
             <mat-label>Sua data de nascimento</mat-label>
-            <input class="border " matInput [matDatepicker]="picker" formControlName="data" required />
+            <input class="border " matInput [matDatepicker]="picker" formControlName="dataNasc" required />
             <mat-error *ngIf="signupForm.get('data')?.errors?.['required']">Campo obrigatório</mat-error>
             <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -41,11 +41,17 @@
         <mat-form-field appearance="fill">
           <mat-step label="Preencha com sua senha" completed="true">
             <mat-label>Senha</mat-label>
-            <input class="border " matInput placeholder="Sua senha" formControlName="senha" type="password" required />
+            <!-- <input matInput [type]="ocultar ? 'password' : 'text'" placeholder="Sua senha" formControlName="senha"
+            type="text" required> -->
+            <input class="border " matInput placeholder="Sua senha" formControlName="senha" [type]="ocultar ? 'password' : 'text'" required />
             <mat-error *ngIf="signupForm.get('senha')?.errors?.['required']">Campo obrigatório</mat-error>
             <mat-error *ngIf="signupForm.get('senha')?.errors?.['minlength']">O mínimo são 8 caracteres
             </mat-error>
             <mat-icon matPrefix>key</mat-icon>
+            <button type="button" mat-icon-button matSuffix (click)="ocultar = !ocultar" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="ocultar">
+            <mat-icon>{{ocultar ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
           </mat-step>
         </mat-form-field>
         <mat-step label="Confirme sua senha" completed="true">

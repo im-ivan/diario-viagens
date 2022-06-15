@@ -18,7 +18,7 @@ export class CadastroComponent implements OnInit {
     {
       nome: ['', [Validators.required]],
       nick: ['', [Validators.required]],
-      dataNasc: [new Date(), [Validators.required]],
+      dataNasc: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(8)]],
       confirma_senha: [''],
@@ -27,6 +27,7 @@ export class CadastroComponent implements OnInit {
     { validators: [this.matchPasswords] }
   );
 
+  ocultar = true;
   siteKey:string;
 
   matchPasswords(control: AbstractControl): ValidationErrors | null {

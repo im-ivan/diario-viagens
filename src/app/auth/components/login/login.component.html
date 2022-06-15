@@ -17,7 +17,7 @@
                 <mat-error *ngIf="loginForm.get('senha')?.errors?.['required']">Campo obrigatório</mat-error>
                 <mat-error *ngIf="loginForm.get('senha')?.errors?.['minlength']">O mínimo são 8 caracteres</mat-error>
                 <mat-icon matPrefix>key</mat-icon>
-                <button mat-icon-button matSuffix (click)="ocultar = !ocultar" [attr.aria-label]="'Hide password'"
+                <button type="button" mat-icon-button matSuffix (click)="ocultar = !ocultar" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="ocultar">
                     <mat-icon>{{ocultar ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
