@@ -58,3 +58,5 @@ $my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
 $my-app-warn:    mat-palette($mat-deep-orange);
 $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 @include angular-material-theme($my-app-theme);
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

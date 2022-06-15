@@ -37,13 +37,13 @@
       #imagem
       type="file"
       name="imagem"
-      hidden
+      multiple hidden
     />
     <button
-      (click)="imagem.click()"
-      type="button"
-      mat-raised-button
-      color="accent"
+    (click)="imagem.click()"
+    type="button"
+    mat-raised-button
+    [color]="corBtnImg"
     >
       <mat-icon>upload</mat-icon>
       Imagem do diário</button
@@ -51,5 +51,6 @@
     <button mat-raised-button color="primary" [disabled]="form.invalid">
       Adicionar
     </button>
+    <label>{{nameSelected}}</label>
   </div>
 </form>

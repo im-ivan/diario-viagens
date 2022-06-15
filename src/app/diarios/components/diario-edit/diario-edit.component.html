@@ -1,5 +1,5 @@
 <form #form="ngForm" (ngSubmit)="onSubmit()" class="diario-add">
-    <h2 mat-dialog-title>Adicionar diário</h2>
+    <h2 mat-dialog-title>Editar diário</h2>
     <div mat-dialog-content>
       <mat-form-field appearance="fill">
         <mat-label>Título</mat-label>
@@ -37,13 +37,13 @@
         #imagem
         type="file"
         name="imagem"
-        hidden
+        multiple hidden
       />
       <button
         (click)="imagem.click()"
         type="button"
         mat-raised-button
-        color="accent"
+        [color]="corBtnImg"
       >
         <mat-icon>upload</mat-icon>
         Imagem do diário</button
@@ -51,6 +51,7 @@
       <button mat-raised-button color="primary" [disabled]="form.invalid">
         Adicionar
       </button>
+      <label>{{nameSelected}}</label>
     </div>
   </form>
   

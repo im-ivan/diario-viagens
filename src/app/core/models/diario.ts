@@ -1,12 +1,13 @@
 import { Converter } from './converter';
 
 export interface Diario {
+  contador: any;
   id?: string; 
   titulo: string;
   corpo: string;
   local: string;
   data: Date; 
-  imagem?: string; 
+  imagem?: string[]; 
   createdAt: Date; 
   usuarioId?: string;
   usuarioNick?: string;

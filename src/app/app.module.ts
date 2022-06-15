@@ -30,7 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AuthModule,
     DiariosModule,
     HotToastModule.forRoot({
-      position: 'bottom-center',
+      position: 'top-center',
+      duration: 12000,
     }),
     DashboardModule,
     NgbModule
