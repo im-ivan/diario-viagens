@@ -5,7 +5,15 @@
         <mat-card-title>{{ diario.usuarioName }}</mat-card-title>
         <mat-card-subtitle>{{ diario.usuarioNick }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu" />
+      <!-- <img mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu" /> -->
+      <ngb-carousel mat-card-image  *ngIf="diario.imagem != undefined && diario.imagem.length > 0 " [pauseOnFocus]="true" class="container" width="300" height="150">
+        <ng-template ngbSlide  class="button" *ngFor="let item of diario.imagem; index as i">
+          <div class="picsum-img-wrapper">
+            <img width="550px" height="550px" [src]="item"  alt="Foto não carregada">
+          </div>
+       
+        </ng-template>
+      </ngb-carousel>
       <mat-card-content>
         <h2>{{ diario.titulo }}</h2>
         <small>{{ diario.data | date }} | {{ diario.local }}</small>

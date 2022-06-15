@@ -66,8 +66,11 @@ export class NavbarComponent implements OnInit {
   }
 
   openModalNiver(user: any) {
+    
+    console.log(user)
     var exibirModal = localStorage.getItem("exibir_modal");
     if (exibirModal == null) {
+    
       localStorage.setItem("exibir_modal", "s");
       exibirModal = 's';
     }
