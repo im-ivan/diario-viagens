@@ -4,6 +4,7 @@ import { Observable, timeout } from 'rxjs';
 import { AuthService } from '../../services/auth/auth.service';
 import { DialogAniverComponent } from '../dialog-aniver/dialog-aniver.component';
 import * as moment from 'moment';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-navbar',
@@ -17,13 +18,21 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private dialog: MatDialog) {}
+    private dialog: MatDialog,
+    private toast: HotToastService) {}
 
   logged$?: Observable<any>;
   logged: any;
 
   logout() {
-    this.authService.logout('/login').subscribe();
+    this.authService.logout('/login')
+    .pipe(
+      this.toast.observe({
+        success: 'Volte sempre!',
+
+      })
+    )
+    .subscribe();
   }
 
   muda(){
