@@ -36,7 +36,6 @@ export class NavbarComponent implements OnInit {
   }
 
   muda(){
-    console.log("muda por favor")
     var toolbar = document.getElementById("toolbar") as HTMLButtonElement
     var i = toolbar.getAttribute("class")
 
@@ -84,7 +83,6 @@ export class NavbarComponent implements OnInit {
   getUsuarioLogado(){
     this.authService.getUsuario().subscribe(val =>{
       this.usuarioLogado = val;
-      console.log(this.usuarioLogado);
       this.usuarioLogado.dataNasc = moment(this.usuarioLogado.dataNasc.toDate()).format("DD-MM");    
       this.openModalNiver(this.usuarioLogado);
 

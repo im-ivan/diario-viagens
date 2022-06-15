@@ -1,11 +1,13 @@
-<div class="tab-group-container">
+<div>
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Todos">
       <div *ngIf="allDiarios$ | async as diarios; else loading" class="my-5">
         <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)"
           class="mx-auto">
           <mat-grid-tile *ngFor="let diario of diarios">
-            <!-- <a [href]="'diarios/'+diario.id" class="text-decoration-none"> -->
+
+
+
               <mat-card class="example-card">
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
@@ -21,10 +23,11 @@
                  
                   </ng-template>
                 </ngb-carousel>
-                <!--  -->
-                <!-- <img width="300" height="150" mat-card-image [src]="diario.imagem" alt="Photo of a Shiba Inu" /> -->
+
                 <mat-card-content>
-                  <h2>{{ diario.titulo }}</h2>
+                  <a [routerLink]="diario.id" class="text-decoration-none">
+                    <h2>{{ diario.titulo }}</h2>
+                  </a>
                   <small>{{ diario.data | date }} | {{ diario.local }}</small>
                   <p>{{ diario.corpo }}</p>
                 </mat-card-content>
@@ -34,7 +37,6 @@
                   </a>
                 </mat-card-actions>
               </mat-card>
-            <!-- </a> -->
           </mat-grid-tile>
         </mat-grid-list>
       </div>
@@ -44,7 +46,8 @@
         <mat-grid-list [cols]="numeroDeColunas" rowHeight="500px" gutterSize="40" (window:resize)="onResize($event)"
           class="mx-auto">
           <mat-grid-tile *ngFor="let diario of diarios">
-              <mat-card class="example-card">
+            <mat-card class="example-card">
+              <a [routerLink]="diario.id" class="text-decoration-none text-dark">
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
                   <mat-card-title>{{ diario.usuarioName }}</mat-card-title>
@@ -64,15 +67,16 @@
                   <small>{{ diario.data | date }} | {{ diario.local }}</small>
                   <p>{{ diario.corpo }}</p>
                 </mat-card-content>
-                <mat-card-actions>
-                  <button (click)="onClickEdit(diario)" mat-icon-button color="primary">
-                    <mat-icon>edit</mat-icon>
-                  </button>
-                  <button (click)="onClickDelete(diario)" mat-icon-button color="warn">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                </mat-card-actions>
-              </mat-card>
+              </a>
+              <mat-card-actions>
+                <button (click)="onClickEdit(diario)" mat-icon-button color="primary">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="onClickDelete(diario)" mat-icon-button color="warn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
           </mat-grid-tile>
         </mat-grid-list>
       </div>

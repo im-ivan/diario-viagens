@@ -13,7 +13,6 @@ import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { DiariosModule } from './diarios/diarios.module';
-import { NgChartsModule } from 'ng2-charts';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,7 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     provideStorage(() => getStorage()),
     BrowserAnimationsModule,
     CoreModule,
-    AuthModule, // As rotas em auth agora fazem parte do app
+    AuthModule,
     DiariosModule,
     HotToastModule.forRoot({
       position: 'top-center',
